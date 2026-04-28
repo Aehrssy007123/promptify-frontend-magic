@@ -1,11 +1,16 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import Marquee from "@/components/Marquee";
+import Stats from "@/components/Stats";
 import PromptPlayground from "@/components/PromptPlayground";
+import HowItWorks from "@/components/HowItWorks";
 import Features from "@/components/Features";
+import Testimonials from "@/components/Testimonials";
 import Pricing from "@/components/Pricing";
 import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
+import Reveal from "@/components/Reveal";
 
 const Index = () => {
   return (
@@ -13,11 +18,15 @@ const Index = () => {
       <Navbar />
       <main>
         <Hero />
-        <PromptPlayground />
-        <Features />
-        <Pricing />
-        <FAQ />
-        <CTA />
+        <Marquee />
+        <Reveal><Stats /></Reveal>
+        <Reveal><PromptPlayground /></Reveal>
+        <Reveal><HowItWorks /></Reveal>
+        <Reveal><Features /></Reveal>
+        <Reveal><Testimonials /></Reveal>
+        <Reveal><Pricing /></Reveal>
+        <Reveal><FAQ /></Reveal>
+        <Reveal><CTA /></Reveal>
       </main>
       <Footer />
     </div>

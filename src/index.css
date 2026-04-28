@@ -111,6 +111,62 @@
     background-size: 48px 48px;
     mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, black, transparent);
   }
+
+  .hover-scale {
+    @apply transition-transform duration-300 hover:scale-[1.03];
+  }
+
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-glow;
+  }
+
+  .story-link {
+    @apply relative inline-block after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-gradient-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left;
+  }
+
+  .shimmer-text {
+    background: linear-gradient(90deg, hsl(240 10% 96%) 0%, hsl(270 91% 75%) 25%, hsl(330 90% 72%) 50%, hsl(270 91% 75%) 75%, hsl(240 10% 96%) 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 4s linear infinite;
+  }
+
+  .aurora {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+  }
+  .aurora::before,
+  .aurora::after {
+    content: "";
+    position: absolute;
+    width: 60vw;
+    height: 60vw;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.45;
+    animation: aurora-move 18s ease-in-out infinite alternate;
+  }
+  .aurora::before {
+    background: radial-gradient(circle, hsl(270 91% 65%), transparent 60%);
+    top: -20%;
+    left: -10%;
+  }
+  .aurora::after {
+    background: radial-gradient(circle, hsl(330 90% 66%), transparent 60%);
+    top: 10%;
+    right: -20%;
+    animation-delay: -9s;
+  }
+}
+
+@keyframes aurora-move {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(10%, 5%) scale(1.1); }
+  100% { transform: translate(-5%, 10%) scale(0.95); }
 }
 
 @keyframes float {
@@ -128,7 +184,28 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
 @keyframes pulse-glow {
   0%, 100% { box-shadow: 0 0 30px hsl(270 91% 65% / 0.3); }
   50% { box-shadow: 0 0 60px hsl(270 91% 65% / 0.6); }
 }
+
+@keyframes blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
