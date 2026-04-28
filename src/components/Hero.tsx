@@ -43,14 +43,7 @@ const Hero = () => {
           </Button>
         </div>
 
-        <div className="mt-16 flex flex-wrap justify-center items-center gap-x-10 gap-y-4 text-xs uppercase tracking-widest text-muted-foreground/70 font-medium animate-fade-up" style={{ animationDelay: "0.4s", animationFillMode: "both" }}>
-          <span>Works with</span>
-          <span className="text-foreground/80">ChatGPT</span>
-          <span className="text-foreground/80">Claude</span>
-          <span className="text-foreground/80">Gemini</span>
-          <span className="text-foreground/80">Mistral</span>
-          <span className="text-foreground/80">Llama</span>
-        </div>
+        <LiveDemo />
       </div>
     </section>
   );
