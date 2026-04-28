@@ -1,9 +1,11 @@
 import { Sparkles, ArrowRight, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import LiveDemo from "@/components/LiveDemo";
 
 const Hero = () => {
   return (
     <section className="relative pt-36 pb-20 px-6 overflow-hidden bg-hero">
+      <div className="aurora" />
       <div className="absolute inset-0 grid-bg pointer-events-none" />
 
       {/* Floating orbs */}
